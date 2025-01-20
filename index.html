@@ -10,7 +10,9 @@
       box-sizing: border-box;
     }
     body {
-      background-color: red; 
+      background-image: url('dein-bild.jpg'); /* Hintergrundbild */
+      background-size: cover;                /* Bild über gesamten Hintergrund */
+      background-position: center;           /* Zentrierung des Bildes */
       display: flex; 
       justify-content: center; 
       align-items: center; 
@@ -21,8 +23,8 @@
     /* Größeres Herz für Kasia + Halil */
     .heart {
       position: relative;
-      width: 250px;         /* Herz-Breite vergrößert */
-      height: 250px;        /* Herz-Höhe vergrößert */
+      width: 400px;         /* Herz-Breite deutlich vergrößert */
+      height: 400px;        /* Herz-Höhe deutlich vergrößert */
       background-color: white;
       transform: rotate(-45deg);
       display: flex;
@@ -41,29 +43,29 @@
     .heart::after {
       content: '';
       position: absolute;
-      width: 250px;
-      height: 250px;
+      width: 400px;
+      height: 400px;
       background-color: white;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -125px;
+      top: -200px;
       left: 0;
     }
     .heart::after {
       top: 0;
-      left: 125px;
+      left: 200px;
     }
 
     .text {
       transform: rotate(45deg); /* Text wieder gerade drehen */
-      font-size: 24px;          /* Schriftgröße anpassen */
+      font-size: 36px;          /* Schriftgröße deutlich vergrößert */
       color: red;
       font-weight: bold;
       text-align: center;
       line-height: 1.2;
-      width: 80%;               /* etwas Platz */
+      width: 90%;               /* Platz für den Text */
     }
   </style>
 </head>
