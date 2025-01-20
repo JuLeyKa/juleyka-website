@@ -27,7 +27,7 @@
       transform: rotate(-45deg);
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* Text weiter nach oben setzen */
       overflow: visible;    /* Kein Abschneiden des Textes */
       cursor: pointer;      /* Hand-Symbol beim Hover */
       transition: transform 0.3s;
@@ -58,12 +58,14 @@
 
     .text {
       transform: rotate(45deg); /* Text wieder gerade drehen */
-      font-size: 18px;          /* Schriftgröße anpassen */
+      font-size: 28px;          /* Schriftgröße anpassen */
       color: red;
       font-weight: bold;
       text-align: center;
-      line-height: 1.2;
-      width: 120%;               /* etwas Platz */
+      line-height: 1.4;
+      width: 100%;             /* Mehr horizontaler Platz */
+      top: 20px;               /* Text nach oben verschieben */
+      position: relative;
     }
   </style>
 </head>
@@ -72,7 +74,7 @@
   <!-- Klick auf das Herz führt zu family.html -->
   <a href="family.html" style="text-decoration: none;">
     <div class="heart">
-      <div class="text">Kasia meine Liebe</div>
+      <div class="text">Kasia + Halil</div>
     </div>
   </a>
 
