@@ -19,17 +19,13 @@
     }
 
     .heart {
-      position: relative;
+      position: relative;      /* Wichtig, damit .text sich darauf bezieht */
       width: 350px;
       height: 350px;
       background-color: white;
       transform: rotate(-45deg);
-      display: flex;
-      justify-content: center;
-      align-items: center;  /* Zentriert den Text innerhalb des Herzens */
-      overflow: visible;
-      cursor: pointer;
       transition: transform 0.3s;
+      cursor: pointer;
     }
 
     .heart:hover {
@@ -57,14 +53,17 @@
     }
 
     .text {
-      transform: rotate(45deg); /* Text wieder aufrecht drehen */
-      font-size: 28px;        
+      position: absolute;      
+      top: 50%;
+      left: 50%;
+      /* Erst zurückdrehen (um +45°), 
+         dann mit translate(-50%, -50%) ins Zentrum schieben */
+      transform: rotate(45deg) translate(-50%, -50%);
+      font-size: 28px;
       color: red;
       font-weight: bold;
       text-align: center;
       line-height: 1.4;
-      /* kein top oder margin notwendig, 
-         da wir über flexbox zentrieren */
     }
   </style>
 </head>
