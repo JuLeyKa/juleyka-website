@@ -11,72 +11,59 @@
     }
     body {
       background-image: url('dein-bild.jpg'); /* Hintergrundbild */
-      background-size: cover;                /* Bild über gesamten Hintergrund */
-      background-position: center;           /* Zentrierung des Bildes */
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       font-family: Arial, sans-serif;
     }
 
-    /* Größeres Herz für Kasia + Halil */
     .heart {
       position: relative;
-      width: 400px;         /* Herz-Breite deutlich vergrößert */
-      height: 400px;        /* Herz-Höhe deutlich vergrößert */
+      width: 500px; /* Herz vergrößert */
+      height: 500px; /* Herz vergrößert */
       background-color: white;
       transform: rotate(-45deg);
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: visible;    /* Kein Abschneiden des Textes */
-      cursor: pointer;      /* Hand-Symbol beim Hover */
-      transition: transform 0.3s;
-    }
-
-    .heart:hover {
-      transform: rotate(-45deg) scale(1.1);
+      overflow: visible;
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
       background-color: white;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -200px;
+      top: -250px;
       left: 0;
     }
     .heart::after {
       top: 0;
-      left: 200px;
+      left: 250px;
     }
 
     .text {
       transform: rotate(45deg); /* Text wieder gerade drehen */
-      font-size: 36px;          /* Schriftgröße deutlich vergrößert */
+      font-size: 36px;          /* Schriftgröße anpassen */
       color: red;
       font-weight: bold;
       text-align: center;
       line-height: 1.2;
-      width: 90%;               /* Platz für den Text */
     }
   </style>
 </head>
 <body>
-
-  <!-- Klick auf das Herz führt zu family.html -->
-  <a href="family.html" style="text-decoration: none;">
-    <div class="heart">
-      <div class="text">Kasia + Halil</div>
-    </div>
-  </a>
-
+  <div class="heart">
+    <div class="text">Kasia + Halil</div>
+  </div>
 </body>
 </html>
