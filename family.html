@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unsere Töchter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .hearts-container {
+      display: flex;
+      gap: 50px; /* Abstand zwischen den Herzen */
+    }
+
+    .heart {
+      position: relative;
+      width: 150px; /* etwas kleiner als vorher */
+      height: 150px;
+      background-color: white;
+      transform: rotate(-45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 75px;
+    }
+
+    .text {
+      transform: rotate(45deg); /* Text wieder gerade drehen */
+      font-size: 18px;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-container">
+    <div class="heart">
+      <div class="text">Julia</div>
+    </div>
+    <div class="heart">
+      <div class="text">Leyla</div>
+    </div>
+  </div>
+</body>
+</html>
