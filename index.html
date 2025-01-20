@@ -18,18 +18,17 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Größeres Herz für Kasia + Halil */
     .heart {
       position: relative;
-      width: 350px;         /* Herz-Breite vergrößert */
-      height: 350px;        /* Herz-Höhe vergrößert */
+      width: 350px;
+      height: 350px;
       background-color: white;
       transform: rotate(-45deg);
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* Text weiter nach oben setzen */
-      overflow: visible;    /* Kein Abschneiden des Textes */
-      cursor: pointer;      /* Hand-Symbol beim Hover */
+      align-items: center;  /* Zentriert den Text innerhalb des Herzens */
+      overflow: visible;
+      cursor: pointer;
       transition: transform 0.3s;
     }
 
@@ -51,32 +50,29 @@
       top: -175px;
       left: 0;
     }
+    
     .heart::after {
       top: 0;
       left: 175px;
     }
 
     .text {
-      transform: rotate(45deg); /* Text wieder gerade drehen */
-      font-size: 28px;          /* Schriftgröße anpassen */
+      transform: rotate(45deg); /* Text wieder aufrecht drehen */
+      font-size: 28px;        
       color: red;
       font-weight: bold;
       text-align: center;
       line-height: 1.4;
-      width: 100%;             /* Mehr horizontaler Platz */
-      top: 20px;               /* Text nach oben verschieben */
-      position: relative;
+      /* kein top oder margin notwendig, 
+         da wir über flexbox zentrieren */
     }
   </style>
 </head>
 <body>
-
-  <!-- Klick auf das Herz führt zu family.html -->
   <a href="family.html" style="text-decoration: none;">
     <div class="heart">
       <div class="text">Kasia + Halil</div>
     </div>
   </a>
-
 </body>
 </html>
