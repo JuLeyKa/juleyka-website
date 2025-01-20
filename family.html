@@ -9,7 +9,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       background-color: red;
       display: flex;
@@ -21,50 +20,54 @@
 
     .hearts-container {
       display: flex;
-      gap: 50px; /* Abstand zwischen den Herzen */
+      gap: 60px; /* Abstand zwischen den beiden Herzen */
     }
 
+    /* Etwas kleiner als das große Herz auf index.html */
     .heart {
       position: relative;
-      width: 150px; /* etwas kleiner als vorher */
-      height: 150px;
+      width: 200px;
+      height: 200px;
       background-color: white;
       transform: rotate(-45deg);
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: visible;
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       background-color: white;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -75px;
+      top: -100px;
       left: 0;
     }
-
     .heart::after {
       top: 0;
-      left: 75px;
+      left: 100px;
     }
 
     .text {
-      transform: rotate(45deg); /* Text wieder gerade drehen */
-      font-size: 18px;
+      transform: rotate(45deg);
       color: red;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
+      line-height: 1.2;
+      width: 80%;
     }
   </style>
 </head>
 <body>
+
   <div class="hearts-container">
     <div class="heart">
       <div class="text">Julia</div>
@@ -73,5 +76,6 @@
       <div class="text">Leyla</div>
     </div>
   </div>
+
 </body>
 </html>
