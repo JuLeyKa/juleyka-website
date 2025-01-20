@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willkommen bei Juleyka</title>
+  <meta charset="UTF-8" />
+  <title>Kasia + Halil</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: red; /* Roter Hintergrund */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Höhe = ganze Bildschirmhöhe */
+      font-family: Arial, sans-serif;
+    }
+
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      transform: rotate(-45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; /* Zeigt Hand-Symbol beim Hover */
+      transition: transform 0.3s;
+    }
+
+    /* Kleine Hover-Animation */
+    .heart:hover {
+      transform: rotate(-45deg) scale(1.1);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -100px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 100px;
+    }
+
+    .text {
+      transform: rotate(45deg); /* Text wieder gerade drehen */
+      font-size: 20px;
+      color: red; /* Schriftfarbe */
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>Willkommen auf meiner Webseite!</h1>
-    <p>Dies ist meine erste Webseite, erstellt mit Netlify und GitHub.</p>
+  <!-- Klick auf das Herz führt zu family.html -->
+  <a href="family.html" style="text-decoration: none;">
+    <div class="heart">
+      <div class="text">Kasia + Halil</div>
+    </div>
+  </a>
 </body>
 </html>
