@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Kasia + Halil</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
+      margin: 0; 
+      padding: 0; 
       box-sizing: border-box;
     }
     body {
-      background-color: red; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       font-family: Arial, sans-serif;
     }
-
     .heart {
-      position: relative;      /* Wichtig, damit .text sich darauf bezieht */
+      position: relative;
       width: 350px;
       height: 350px;
       background-color: white;
       transform: rotate(-45deg);
       transition: transform 0.3s;
       cursor: pointer;
+      
+      /* WICHTIG: Damit nichts abgeschnitten wird */
+      overflow: visible;
     }
-
     .heart:hover {
       transform: rotate(-45deg) scale(1.1);
     }
 
+    /* Die beiden Kreise für das Herz */
     .heart::before,
     .heart::after {
       content: '';
@@ -40,30 +42,31 @@
       height: 350px;
       background-color: white;
       border-radius: 50%;
+      /* sorge dafür, dass sie hinter dem Text liegen */
+      z-index: -1;
     }
-
     .heart::before {
       top: -175px;
       left: 0;
     }
-    
     .heart::after {
       top: 0;
       left: 175px;
     }
 
+    /* Der Text in der Mitte */
     .text {
-      position: absolute;      
-      top: 50%;
-      left: 50%;
-      /* Erst zurückdrehen (um +45°), 
-         dann mit translate(-50%, -50%) ins Zentrum schieben */
-      transform: rotate(45deg) translate(-50%, -50%);
-      font-size: 28px;
+      position: relative;
+      /* Text drehen wir zurück in die aufrechte Position */
+      transform: rotate(45deg);
       color: red;
+      font-size: 28px;
       font-weight: bold;
       text-align: center;
+      /* Wenn du mehrere Zeilen möchtest: */
       line-height: 1.4;
+      /* z-index > -1, damit er vor den Pseudo-Elementen liegt */
+      z-index: 1;
     }
   </style>
 </head>
