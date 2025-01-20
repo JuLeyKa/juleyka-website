@@ -10,60 +10,71 @@
       box-sizing: border-box;
     }
     body {
-      background-image: url('dein-bild.jpg'); /* Hintergrundbild */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: red; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
       height: 100vh;
       font-family: Arial, sans-serif;
     }
 
+    /* Größeres Herz für Kasia + Halil */
     .heart {
       position: relative;
-      width: 500px; /* Herz vergrößert */
-      height: 500px; /* Herz vergrößert */
+      width: 250px;         /* Herz-Breite vergrößert */
+      height: 250px;        /* Herz-Höhe vergrößert */
       background-color: white;
       transform: rotate(-45deg);
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: visible;
+      overflow: visible;    /* Kein Abschneiden des Textes */
+      cursor: pointer;      /* Hand-Symbol beim Hover */
+      transition: transform 0.3s;
+    }
+
+    .heart:hover {
+      transform: rotate(-45deg) scale(1.1);
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 500px;
-      height: 500px;
+      width: 250px;
+      height: 250px;
       background-color: white;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -250px;
+      top: -125px;
       left: 0;
     }
     .heart::after {
       top: 0;
-      left: 250px;
+      left: 125px;
     }
 
     .text {
       transform: rotate(45deg); /* Text wieder gerade drehen */
-      font-size: 36px;          /* Schriftgröße anpassen */
+      font-size: 24px;          /* Schriftgröße anpassen */
       color: red;
       font-weight: bold;
       text-align: center;
       line-height: 1.2;
+      width: 80%;               /* etwas Platz */
     }
   </style>
 </head>
 <body>
-  <div class="heart">
-    <div class="text">Kasia + Halil</div>
-  </div>
+
+  <!-- Klick auf das Herz führt zu family.html -->
+  <a href="family.html" style="text-decoration: none;">
+    <div class="heart">
+      <div class="text">Kasia + Halil</div>
+    </div>
+  </a>
+
 </body>
 </html>
