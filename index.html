@@ -17,6 +17,7 @@
       height: 100vh;
       font-family: Arial, sans-serif;
     }
+    
     .heart {
       position: relative;
       width: 350px;
@@ -25,15 +26,12 @@
       transform: rotate(-45deg);
       transition: transform 0.3s;
       cursor: pointer;
-      
-      /* WICHTIG: Damit nichts abgeschnitten wird */
-      overflow: visible;
+      overflow: visible; /* Verhindert, dass was abgeschnitten wird */
     }
     .heart:hover {
       transform: rotate(-45deg) scale(1.1);
     }
-
-    /* Die beiden Kreise für das Herz */
+    
     .heart::before,
     .heart::after {
       content: '';
@@ -42,32 +40,30 @@
       height: 350px;
       background-color: white;
       border-radius: 50%;
-      /* sorge dafür, dass sie hinter dem Text liegen */
-      z-index: -1;
+      z-index: -1; /* Damit sie hinter dem Text liegen */
     }
     .heart::before {
-      top: -175px;
+      top: -175px; 
       left: 0;
     }
     .heart::after {
-      top: 0;
+      top: 0; 
       left: 175px;
     }
-
-    /* Der Text in der Mitte */
+    
     .text {
-      position: relative;
-      /* Text drehen wir zurück in die aufrechte Position */
-      transform: rotate(45deg);
+      /* Damit wir auf die .heart als Bezugspunkt setzen können */
+      position: absolute;  
+      /* Im (durch -45° gedrehten) Quadrat an die Mitte heften */
+      top: 50%;
+      left: 50%;
+      /* Text zurückdrehen um +45° und perfekt zentrieren */
+      transform: rotate(45deg) translate(-50%, -50%);
       color: red;
       font-size: 28px;
       font-weight: bold;
       text-align: center;
-      /* Wenn du mehrere Zeilen möchtest: */
-      line-height: 1.4;
-      /* z-index > -1, damit er vor den Pseudo-Elementen liegt */
-      z-index: 1;
-      left: 140px;
+      z-index: 1; /* Höher als die Kreise liegen */
     }
   </style>
 </head>
